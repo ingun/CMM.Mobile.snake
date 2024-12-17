@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMM.Mobile.snake", "CMM.Mobile.snake\CMM.Mobile.snake\CMM.Mobile.snake.csproj", "{46C01344-0214-4961-9FFC-53BC33A3BF8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMM.Mobile.snake.Droid", "CMM.Mobile.snake\CMM.Mobile.snake.Droid\CMM.Mobile.snake.Droid.csproj", "{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMM.Mobile.snake.iOS", "CMM.Mobile.snake\CMM.Mobile.snake.iOS\CMM.Mobile.snake.iOS.csproj", "{3683CC9A-0CB7-4099-9A7C-AB04777D548D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMM.Mobile.snake.Mac", "CMM.Mobile.snake\CMM.Mobile.snake.Mac\CMM.Mobile.snake.Mac.csproj", "{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMM.Mobile.snake.WinUI", "CMM.Mobile.snake\CMM.Mobile.snake.WinUI\CMM.Mobile.snake.WinUI.csproj", "{1DDA497A-5795-4A63-80B4-BB2FB7E3097E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46C01344-0214-4961-9FFC-53BC33A3BF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C01344-0214-4961-9FFC-53BC33A3BF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C01344-0214-4961-9FFC-53BC33A3BF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C01344-0214-4961-9FFC-53BC33A3BF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A67C23-95A6-4B23-A3B4-F75E1F6DB649}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3683CC9A-0CB7-4099-9A7C-AB04777D548D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D125729D-ECD3-4AC0-B037-36A0B9DD7EAF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1DDA497A-5795-4A63-80B4-BB2FB7E3097E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{1DDA497A-5795-4A63-80B4-BB2FB7E3097E}.Debug|Any CPU.Build.0 = Debug|x64
+		{1DDA497A-5795-4A63-80B4-BB2FB7E3097E}.Release|Any CPU.ActiveCfg = Release|x64
+		{1DDA497A-5795-4A63-80B4-BB2FB7E3097E}.Release|Any CPU.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
