@@ -12,10 +12,6 @@ namespace CMM.Mobile.snake
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                })
-                .ConfigureEffects(effects =>
-                {
-                    effects.Add<TouchEffect, PlatformTouchEffect>();
                 });
 
 #if DEBUG

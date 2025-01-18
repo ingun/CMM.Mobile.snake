@@ -2,10 +2,10 @@
 
 public class TouchEffect : RoutingEffect
 {
-    public event TouchActionEventHandler TouchAction;
-
-    public TouchEffect() : base("MyCompany.TouchEffect")
+    public event TouchActionEventHandler? TouchAction;
+    public TouchEffect() : base($"CMM.Mobile.snake.{nameof(TouchEffect)}")
     {
+        Capture = true;
     }
 
     public bool Capture { set; get; }

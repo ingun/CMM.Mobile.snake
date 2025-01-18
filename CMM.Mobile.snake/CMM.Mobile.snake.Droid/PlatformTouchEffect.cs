@@ -3,6 +3,7 @@ using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Microsoft.Maui.Controls.Platform;
 using CMM.Mobile.snake;
 using Microsoft.Maui.Controls;
+using CMM.Mobile.snake.Droid;
 
 [assembly: ExportEffect(typeof(PlatformTouchEffect), "TouchEffect")]
 namespace CMM.Mobile.snake.Droid
@@ -14,10 +15,26 @@ namespace CMM.Mobile.snake.Droid
 
         protected override void OnAttached()
         {
-            view = Control ?? Container;
-            if (view != null)
+            try
             {
-                view.Touch += OnTouch;
+                System.Diagnostics.Debug.WriteLine("PlatformTouchEffect: OnAttached called");
+                view = Control ?? Container;
+                if (view != null)
+                {
+                    view.Enabled = true;
+                    view.Clickable = true;
+                    view.LongClickable = true;
+                    view.Touch += OnTouch;
+                    System.Diagnostics.Debug.WriteLine("PlatformTouchEffect: Touch event attached successfully");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("PlatformTouchEffect: View is null!");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"PlatformTouchEffect Error: {ex.Message}");
             }
         }
 
@@ -31,25 +48,44 @@ namespace CMM.Mobile.snake.Droid
 
         private void OnTouch(object sender, Android.Views.View.TouchEventArgs e)
         {
-            var touchEffect = (TouchEffect)Element.Effects.FirstOrDefault(eff => eff is TouchEffect);
-            if (touchEffect == null) return;
-
-            switch (e.Event.Action)
+            try
             {
-                case MotionEventActions.Down:
-                    touchEffect.OnTouchAction(Element, new TouchActionEventArgs(e.Event.GetPointerId(e.Event.ActionIndex), TouchActionType.Pressed, new Point(e.Event.GetX(), e.Event.GetY()), true));
-                    capture = touchEffect.Capture;
-                    break;
-                case MotionEventActions.Move:
-                    if (capture)
-                    {
-                        touchEffect.OnTouchAction(Element, new TouchActionEventArgs(e.Event.GetPointerId(e.Event.ActionIndex), TouchActionType.Moved, new Point(e.Event.GetX(), e.Event.GetY()), true));
-                    }
-                    break;
-                case MotionEventActions.Up:
-                case MotionEventActions.Cancel:
-                    touchEffect.OnTouchAction(Element, new TouchActionEventArgs(e.Event.GetPointerId(e.Event.ActionIndex), TouchActionType.Released, new Point(e.Event.GetX(), e.Event.GetY()), false));
-                    break;
+                System.Diagnostics.Debug.WriteLine($"PlatformTouchEffect: Touch event received - Action: {e.Event.Action}");
+                
+                var touchEffect = (TouchEffect)Element.Effects.FirstOrDefault(eff => eff is TouchEffect);
+                if (touchEffect == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("PlatformTouchEffect: TouchEffect is null!");
+                    return;
+                }
+
+                e.Handled = true;
+
+                switch (e.Event.Action)
+                {
+                    case MotionEventActions.Down:
+                        System.Diagnostics.Debug.WriteLine("Touch DOWN detected");
+                        touchEffect.OnTouchAction(Element, new TouchActionEventArgs(
+                            e.Event.GetPointerId(e.Event.ActionIndex),
+                            TouchActionType.Pressed,
+                            new Point(e.Event.GetX(), e.Event.GetY()),
+                            true));
+                        break;
+                    case MotionEventActions.Move:
+                        if (capture)
+                        {
+                            touchEffect.OnTouchAction(Element, new TouchActionEventArgs(e.Event.GetPointerId(e.Event.ActionIndex), TouchActionType.Moved, new Point(e.Event.GetX(), e.Event.GetY()), true));
+                        }
+                        break;
+                    case MotionEventActions.Up:
+                    case MotionEventActions.Cancel:
+                        touchEffect.OnTouchAction(Element, new TouchActionEventArgs(e.Event.GetPointerId(e.Event.ActionIndex), TouchActionType.Released, new Point(e.Event.GetX(), e.Event.GetY()), false));
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"OnTouch Error: {ex.Message}");
             }
         }
     }

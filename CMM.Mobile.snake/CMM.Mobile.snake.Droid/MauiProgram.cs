@@ -5,14 +5,19 @@
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureEffects(effects =>
-                {
-                    effects.Add<TouchEffect, PlatformTouchEffect>();
-                });
-
-            return builder.Build();
+       builder
+           .UseMauiApp<App>()
+           // Handlers'ı yapılandır
+           .ConfigureMauiHandlers(handlers =>
+           {
+               // Platform specific handlers
+           })
+           // Effects'i yapılandır
+           .ConfigureEffects(effects =>
+           {
+               effects.Add<TouchEffect, PlatformTouchEffect>();
+           });
+        return builder.Build();
         }
     }
 }
